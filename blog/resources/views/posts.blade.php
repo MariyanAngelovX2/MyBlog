@@ -1,12 +1,8 @@
-<!DOCTYPE html>
+@extends('layout')
 
-<title>My Blog</title>
-<link rel="stylesheet" href="/app.css">
-
-<body>
+@section('content')
     @foreach ($posts as $post)
-
-        <article class="{{$loop->even ? 'foobar' : ''}}">
+        <article>
             <h1>
                 <a href="posts/{{ $post->slug }}">
                     {{ $post->title }}
@@ -18,4 +14,4 @@
             </div>
         </article>
     @endforeach
-</body>
+@endsection
